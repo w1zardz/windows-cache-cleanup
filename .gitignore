@@ -1,0 +1,14 @@
+# Runtime outputs belong on the machine, never in the repository.
+reports/
+*.log
+*.dmp
+*.etl
+*.evtx
+*.bak
+*.tmp
+*.zip
+*.json
+*.xml
+.env*
+.idea/
+.vscode/
