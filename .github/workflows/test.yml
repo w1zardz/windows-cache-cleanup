@@ -5,11 +5,11 @@ permissions:
 jobs:
   test:
     runs-on: windows-latest
-    strategy:
-      matrix:
-        shell: [powershell, pwsh]
     steps:
       - uses: actions/checkout@v4
-      - name: Check protected data and cleanup behavior with isolated fixtures
-        shell: ${{ matrix.shell }}
+      - name: Windows PowerShell 5.1 - isolated cleanup tests
+        shell: powershell
+        run: ./windows-cache-cleanup.test.ps1
+      - name: PowerShell 7 - isolated cleanup tests
+        shell: pwsh
         run: ./windows-cache-cleanup.test.ps1
