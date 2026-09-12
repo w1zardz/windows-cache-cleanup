@@ -9,7 +9,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Windows PowerShell 5.1 - isolated cleanup tests
         shell: powershell
-        run: ./windows-cache-cleanup.test.ps1
+        run: |
+          ./windows-cache-cleanup.test.ps1
+          ./manage-task.test.ps1
       - name: PowerShell 7 - isolated cleanup tests
         shell: pwsh
-        run: ./windows-cache-cleanup.test.ps1
+        run: |
+          ./windows-cache-cleanup.test.ps1
+          ./manage-task.test.ps1
+      - name: Native Windows task registration - disabled fixture only
+        shell: powershell
+        run: ./scheduler-native.test.ps1
